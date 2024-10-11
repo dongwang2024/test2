@@ -1,0 +1,21 @@
+<!doctype html>  
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+    <title>猜数字游戏</title>  
+  </head>  
+  <body>  
+    <h1>欢迎来到猜数字游戏！</h1>  
+    <p>我已经选择了一个1到100之间的数字。</p>  
+    <p>你有 {{ attempts_allowed }} 次机会来猜中它。</p>  
+    <form action="{{ url_for('guess') }}" method="post">  
+      <label for="guess">请输入你的第 {{ attempt_count }} 次猜测:</label>  
+      <input type="text" id="guess" name="guess">  
+      <button type="submit">提交</button>  
+    </form>  
+    {% if message %}  
+      <p>{{ message }}</p>  
+    {% endif %}  
+  </body>  
+</html>
